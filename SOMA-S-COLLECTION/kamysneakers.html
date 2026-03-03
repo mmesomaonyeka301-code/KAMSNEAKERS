@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KAMSNEAKERS</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;800&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        :root {
+            --bg: #0a0a0f;
+            --card: #141414;
+            --card-hover: #1a1a1a;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f0f0f5;
+            --muted: rgba(240, 240, 245, 0.45);
+            --accent: #c8f55a;
+            --accent2: #ffcc00;
+            --accent-dim: rgba(200, 245, 90, 0.12)
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background-color: var(--bg);
+            font-family: 'DM Sans', sans-serif;
+            color: var(--text);
+            min-height: 100vh
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, .030) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 200;
+            padding: 0 2.5rem;
+            height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(18px) saturate(160%);
+            border-bottom: 1px solid var(--border);
+            animation: slideDown .5s cubic-bezier(.22, 1, .36, 1) both
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -.5px;
+            display: flex;
+            align-items: center;
+            gap: .45rem;
+            text-decoration: none;
+            color: var(--text)
+        }
+
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent);
+            animation: pulse 2.4s ease-in-out infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1
+            }
+
+            50% {
+                transform: scale(1.4);
+                opacity: .7
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: .25rem;
+            list-style: none
+        }
+
+        .nav-links a {
+            position: relative;
+            display: block;
+            padding: .45rem .85rem;
+            font-size: .875rem;
+            font-weight: 400;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: color .2s, background .2s;
+            letter-spacing: .01em
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 6px;
+            left: 50%;
+            right: 50%;
+            height: 1.5px;
+            background: var(--accent);
+            border-radius: 2px;
+            transition: left .25s cubic-bezier(.22, 1, .36, 1), right .25s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+            background: var(--surface)
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            left: .85rem;
+            right: .85rem
+        }
+
+        .nav-links a.active {
+            color: var(--text)
+        }
+
+        .badge {
+            display: inline-block;
+            margin-left: .4rem;
+            padding: 1px 6px;
+            font-size: .65rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            background: var(--accent-dim);
+            color: var(--accent);
+            border-radius: 20px;
+            border: 1px solid rgba(200, 245, 90, .25);
+            vertical-align: middle;
+            line-height: 1.6
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: .75rem
+        }
+
+        .btn-ghost {
+            padding: .45rem .9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .875rem;
+            font-weight: 500;
+            color: var(--muted);
+            background: transparent;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: color .2s, border-color .2s, background .2s
+        }
+
+        .btn-ghost:hover {
+            color: var(--text);
+            border-color: rgba(255, 255, 255, .18);
+            background: var(--surface)
+        }
+
+        .btn-primary {
+            padding: .45rem 1.1rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .875rem;
+            font-weight: 500;
+            color: #0a0a0f;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .2s, background .2s;
+            box-shadow: 0 0 18px rgba(200, 245, 90, .25)
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 28px rgba(200, 245, 90, .45);
+            background: #d4f96e
+        }
+
+        /* Cart icon button */
+        .cart-btn {
+            position: relative;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: .45rem .7rem;
+            cursor: pointer;
+            color: var(--muted);
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            font-size: .875rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            transition: color .2s, border-color .2s, background .2s
+        }
+
+        .cart-btn:hover {
+            color: var(--text);
+            border-color: rgba(255, 255, 255, .18);
+            background: var(--surface)
+        }
+
+        .cart-btn svg {
+            width: 18px;
+            height: 18px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--accent);
+            color: #0a0a0f;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: .6rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity .2s
+        }
+
+        .cart-count.show {
+            opacity: 1
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: .4rem;
+            border-radius: 6px;
+            transition: background .2s
+        }
+
+        .hamburger:hover {
+            background: var(--surface)
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: transform .3s, opacity .3s, width .3s
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg)
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+            width: 0
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg)
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 68px;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 15, .96);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.25rem 2rem 1.75rem;
+            flex-direction: column;
+            gap: .25rem;
+            animation: fadeIn .25s ease both;
+            z-index: 199
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-8px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .mobile-menu.open {
+            display: flex
+        }
+
+        .mobile-menu a {
+            padding: .65rem .75rem;
+            font-size: .95rem;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: color .2s, background .2s
+        }
+
+        .mobile-menu a:hover {
+            color: var(--text);
+            background: var(--surface)
+        }
+
+        .mobile-menu .divider {
+            height: 1px;
+            background: var(--border);
+            margin: .75rem 0
+        }
+
+        .mobile-menu .btn-primary {
+            width: 100%;
+            text-align: center;
+            padding: .65rem
+        }
+
+        @media(max-width:768px) {
+
+            .nav-links,
+            .btn-ghost,
+            .btn-primary {
+                display: none
+            }
+
+            .hamburger {
+                display: flex
+            }
+        }
+
+        /* ══ OVERLAY BACKDROP ══ */
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, .7);
+            backdrop-filter: blur(6px);
+            z-index: 300;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s
+        }
+
+        .overlay.show {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        /* ══ MODAL BASE ══ */
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -44%);
+            z-index: 301;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            width: min(480px, 92vw);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s, transform .3s
+        }
+
+        .modal.show {
+            opacity: 1;
+            pointer-events: all;
+            transform: translate(-50%, -50%)
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem
+        }
+
+        .modal-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: .05em
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            font-size: 1.4rem;
+            line-height: 1;
+            padding: .25rem;
+            border-radius: 6px;
+            transition: color .2s, background .2s
+        }
+
+        .modal-close:hover {
+            color: var(--text);
+            background: var(--surface)
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem
+        }
+
+        .form-label {
+            display: block;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .5rem
+        }
+
+        .form-input {
+            width: 100%;
+            padding: .7rem 1rem;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: .9rem;
+            outline: none;
+            transition: border-color .2s, background .2s
+        }
+
+        .form-input:focus {
+            border-color: rgba(200, 245, 90, .4);
+            background: rgba(200, 245, 90, .04)
+        }
+
+        .form-input::placeholder {
+            color: var(--muted)
+        }
+
+        .form-divider {
+            text-align: center;
+            color: var(--muted);
+            font-size: .8rem;
+            margin: 1.25rem 0;
+            position: relative
+        }
+
+        .form-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border)
+        }
+
+        .form-divider span {
+            background: var(--card);
+            padding: 0 .75rem;
+            position: relative
+        }
+
+        .modal-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: .82rem;
+            color: var(--muted)
+        }
+
+        .modal-footer a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        .modal-footer a:hover {
+            text-decoration: underline
+        }
+
+        .auth-success {
+            display: none;
+            text-align: center;
+            padding: 1rem 0
+        }
+
+        .auth-success .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem
+        }
+
+        .auth-success p {
+            color: var(--muted);
+            font-size: .9rem
+        }
+
+        /* ══ CART DRAWER ══ */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(420px, 100vw);
+            background: var(--card);
+            border-left: 1px solid var(--border);
+            z-index: 301;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(100%);
+            transition: transform .35s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .cart-drawer.open {
+            transform: translateX(0)
+        }
+
+        .cart-drawer-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 1.75rem;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .cart-drawer-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            letter-spacing: .05em
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem 1.75rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem
+        }
+
+        .cart-empty {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .75rem;
+            color: var(--muted);
+            padding: 2rem
+        }
+
+        .cart-empty svg {
+            width: 48px;
+            height: 48px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.2;
+            opacity: .3
+        }
+
+        .cart-empty p {
+            font-size: .9rem
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            background: rgba(255, 255, 255, .03);
+            border: 1px solid var(--border);
+            border-radius: 14px
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            object-fit: cover;
+            background: #1c1c1c;
+            flex-shrink: 0
+        }
+
+        .cart-item-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .cart-item-brand {
+            font-size: .65rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .15rem
+        }
+
+        .cart-item-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: .04em;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .cart-item-price {
+            font-size: .85rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: .2rem
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            padding: .3rem;
+            border-radius: 6px;
+            transition: color .2s, background .2s;
+            flex-shrink: 0
+        }
+
+        .cart-item-remove:hover {
+            color: #ff4d4d;
+            background: rgba(255, 77, 77, .08)
+        }
+
+        .cart-item-remove svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round
+        }
+
+        .cart-footer {
+            padding: 1.5rem 1.75rem;
+            border-top: 1px solid var(--border)
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem
+        }
+
+        .cart-total-label {
+            font-size: .8rem;
+            color: var(--muted);
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .cart-total-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            letter-spacing: .03em
+        }
+
+        .btn-checkout {
+            width: 100%;
+            padding: .85rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .95rem;
+            font-weight: 600;
+            color: #0a0a0f;
+            background: var(--accent);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .2s, background .2s;
+            box-shadow: 0 0 24px rgba(200, 245, 90, .25)
+        }
+
+        .btn-checkout:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 36px rgba(200, 245, 90, .45);
+            background: #d4f96e
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--card);
+            border: 1px solid rgba(200, 245, 90, .3);
+            border-radius: 12px;
+            padding: .75rem 1.25rem;
+            font-size: .85rem;
+            font-weight: 500;
+            color: var(--text);
+            z-index: 400;
+            opacity: 0;
+            transition: opacity .3s, transform .3s;
+            white-space: nowrap;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, .4)
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0)
+        }
+
+        .toast .toast-icon {
+            color: var(--accent);
+            margin-right: .4rem
+        }
+
+        /* ══ SHARED SECTION STYLES ══ */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .75rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.4rem
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 2px
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            line-height: .92;
+            letter-spacing: .01em;
+            margin-bottom: 1.5rem
+        }
+
+        .section-title span {
+            -webkit-text-stroke: 1.5px rgba(240, 240, 245, .25);
+            color: transparent
+        }
+
+        .section-subtitle {
+            max-width: 480px;
+            font-size: 1.05rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 4.5rem;
+            font-weight: 300
+        }
+
+        /* ══ HERO ══ */
+        #Home {
+            position: relative;
+            z-index: 1
+        }
+
+        .demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-top: 68px;
+            gap: 1rem;
+            text-align: center
+        }
+
+        .demo h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -.03em
+        }
+
+        .demo h1 span {
+            color: var(--accent)
+        }
+
+        .demo p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 420px;
+            line-height: 1.65
+        }
+
+        .scroll-cue {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .4rem;
+            color: var(--muted);
+            font-size: .75rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: color .2s;
+            animation: bob 2s ease-in-out infinite
+        }
+
+        .scroll-cue:hover {
+            color: var(--accent)
+        }
+
+        .scroll-cue svg {
+            width: 20px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        @keyframes bob {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(6px)
+            }
+        }
+
+        /* ══ FEATURES ══ */
+        .features-section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 5vw 120px;
+            max-width: 1300px;
+            margin: 0 auto
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.25rem
+        }
+
+        .feat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2.25rem;
+            position: relative;
+            overflow: hidden;
+            cursor: default;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .6s ease, transform .6s ease, background .3s, box-shadow .3s
+        }
+
+        .feat-card.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .feat-card.visible:hover {
+            transform: translateY(-4px);
+            background: var(--card-hover);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, .4), 0 0 0 1px rgba(255, 255, 255, .1)
+        }
+
+        .feat-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            border-radius: inherit;
+            transition: opacity .4s;
+            pointer-events: none
+        }
+
+        .feat-card:hover::before {
+            opacity: 1
+        }
+
+        .feat-card.orange::before {
+            background: radial-gradient(ellipse at top left, rgba(255, 77, 0, .1), transparent 60%)
+        }
+
+        .feat-card.yellow::before {
+            background: radial-gradient(ellipse at top right, rgba(255, 204, 0, .08), transparent 60%)
+        }
+
+        .feat-card.white::before {
+            background: radial-gradient(ellipse at bottom left, rgba(255, 255, 255, .05), transparent 60%)
+        }
+
+        .card-1 {
+            grid-column: span 5
+        }
+
+        .card-2 {
+            grid-column: span 7
+        }
+
+        .card-3 {
+            grid-column: span 4
+        }
+
+        .card-4 {
+            grid-column: span 4
+        }
+
+        .card-5 {
+            grid-column: span 4
+        }
+
+        .card-6 {
+            grid-column: span 12
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem
+        }
+
+        .icon-orange {
+            background: rgba(255, 77, 0, .15);
+            border: 1px solid rgba(255, 77, 0, .25)
+        }
+
+        .icon-yellow {
+            background: rgba(255, 204, 0, .12);
+            border: 1px solid rgba(255, 204, 0, .2)
+        }
+
+        .icon-white {
+            background: rgba(255, 255, 255, .06);
+            border: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .card-tag {
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: .5rem
+        }
+
+        .card-tag.yellow {
+            color: var(--accent2)
+        }
+
+        .card-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.75rem;
+            letter-spacing: .04em;
+            line-height: 1.1;
+            margin-bottom: .75rem
+        }
+
+        .card-desc {
+            font-size: .9rem;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300
+        }
+
+        .stat-row {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border)
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: .2rem
+        }
+
+        .stat-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.4rem;
+            color: var(--accent);
+            letter-spacing: .02em;
+            line-height: 1
+        }
+
+        .stat-label {
+            font-size: .72rem;
+            color: var(--muted);
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .6rem;
+            margin-top: 1.5rem
+        }
+
+        .tech-pill {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .45rem .85rem;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: .8rem;
+            color: var(--text);
+            font-weight: 500;
+            transition: background .2s, border-color .2s, color .2s
+        }
+
+        .tech-pill:hover {
+            background: rgba(200, 245, 90, .1);
+            border-color: rgba(200, 245, 90, .3);
+            color: var(--accent)
+        }
+
+        .tech-pill .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0
+        }
+
+        .swatches {
+            display: flex;
+            gap: .65rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap
+        }
+
+        .swatch {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: transform .2s, border-color .2s;
+            position: relative
+        }
+
+        .swatch:hover {
+            transform: scale(1.15);
+            border-color: rgba(255, 255, 255, .4)
+        }
+
+        .swatch.active {
+            border-color: white
+        }
+
+        .swatch::after {
+            content: '';
+            position: absolute;
+            inset: 2px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(0, 0, 0, .25)
+        }
+
+        .rating-big {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--accent2);
+            margin: .5rem 0 .25rem
+        }
+
+        .stars {
+            display: flex;
+            gap: 3px;
+            margin-bottom: .75rem
+        }
+
+        .star {
+            font-size: 1rem
+        }
+
+        .review-bar {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            margin-bottom: .35rem
+        }
+
+        .bar-label {
+            font-size: .72rem;
+            color: var(--muted);
+            width: 14px;
+            text-align: right
+        }
+
+        .bar-track {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, .08);
+            border-radius: 4px;
+            overflow: hidden
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: var(--accent2);
+            border-radius: 4px;
+            transform-origin: left;
+            animation: growBar .8s cubic-bezier(.22, 1, .36, 1) both;
+            animation-delay: var(--d, 0s)
+        }
+
+        @keyframes growBar {
+            from {
+                transform: scaleX(0)
+            }
+
+            to {
+                transform: scaleX(1)
+            }
+        }
+
+        .bar-count {
+            font-size: .7rem;
+            color: var(--muted);
+            width: 28px
+        }
+
+        .size-row {
+            display: flex;
+            gap: .5rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem
+        }
+
+        .size-chip {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: .82rem;
+            font-weight: 600;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: background .2s, border-color .2s, color .2s
+        }
+
+        .size-chip:hover,
+        .size-chip.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #0a0a0f
+        }
+
+        .size-note {
+            font-size: .75rem;
+            color: var(--muted);
+            margin-top: .75rem
+        }
+
+        .card-6 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 2rem 2.5rem;
+            background: linear-gradient(105deg, #0d1a00 0%, #141414 60%);
+            border-color: rgba(200, 245, 90, .15)
+        }
+
+        .banner-left {
+            flex: 1
+        }
+
+        .banner-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: .05em;
+            margin-bottom: .4rem
+        }
+
+        .banner-desc {
+            font-size: .875rem;
+            color: var(--muted);
+            max-width: 480px
+        }
+
+        .banner-badges {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap
+        }
+
+        .badge-item {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .5rem 1rem;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: .82rem;
+            font-weight: 500;
+            white-space: nowrap
+        }
+
+        .badge-item span {
+            font-size: 1.1rem
+        }
+
+        @media(max-width:900px) {
+
+            .card-1,
+            .card-2,
+            .card-3,
+            .card-4,
+            .card-5 {
+                grid-column: span 12
+            }
+        }
+
+        @media(max-width:600px) {
+            .card-6 {
+                flex-direction: column;
+                align-items: flex-start
+            }
+
+            .section-title {
+                font-size: 3.5rem
+            }
+
+            .features-section {
+                padding: 60px 5vw 80px
+            }
+        }
+
+        /* ══ PRICING ══ */
+        #Pricing {
+            position: relative;
+            z-index: 1;
+            padding: 100px 5vw 120px
+        }
+
+        .pricing-wrap {
+            max-width: 1300px;
+            margin: 0 auto
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem
+        }
+
+        .pricing-header .section-label {
+            justify-content: center
+        }
+
+        .pricing-header .section-title {
+            text-align: center
+        }
+
+        .pricing-header .section-subtitle {
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+            gap: 1.5rem
+        }
+
+        .shoe-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .6s ease, transform .6s ease, box-shadow .3s, border-color .3s
+        }
+
+        .shoe-card.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .shoe-card.visible:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 56px rgba(65, 65, 65, 0.5);
+            border-color: rgba(2, 120, 79, 0.758)
+        }
+
+        .shoe-img-wrap {
+            position: relative;
+            background: linear-gradient(135deg, #1c1c1c 0%, #111 100%);
+            padding: 1.75rem;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden
+        }
+
+        .shoe-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 65% 35%, rgba(200, 245, 90, .05), transparent 70%);
+            pointer-events: none
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            border: 2px dashed rgba(255, 255, 255, .1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            color: rgba(255, 255, 255, .18);
+            font-size: .72rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            transition: border-color .3s;
+            overflow: hidden;
+            padding: 0
+        }
+
+        .img-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px
+        }
+
+        .img-placeholder svg {
+            display: none
+        }
+
+        .shoe-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 14px 28px rgba(0, 0, 0, .65));
+            transition: transform .4s cubic-bezier(.22, 1, .36, 1)
+        }
+
+        .shoe-card.visible:hover .shoe-img {
+            transform: scale(1.09) rotate(-2deg)
+        }
+
+        .shoe-badge {
+            position: absolute;
+            top: .8rem;
+            left: .8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: .64rem;
+            font-weight: 700;
+            letter-spacing: .09em;
+            text-transform: uppercase;
+            z-index: 2
+        }
+
+        .badge-new {
+            background: var(--accent);
+            color: #0a0a0f
+        }
+
+        .badge-hot {
+            background: #ff4d00;
+            color: #fff
+        }
+
+        .badge-sale {
+            background: var(--accent2);
+            color: #0a0a0f
+        }
+
+        .badge-ltd {
+            background: rgba(255, 255, 255, .1);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, .18)
+        }
+
+        .shoe-info {
+            padding: 1.2rem 1.4rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: .35rem;
+            flex: 1
+        }
+
+        .shoe-brand {
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        .shoe-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.4rem;
+            letter-spacing: .04em;
+            line-height: 1.1
+        }
+
+        .shoe-desc {
+            font-size: .8rem;
+            color: var(--muted);
+            line-height: 1.65;
+            font-weight: 300;
+            flex: 1;
+            margin-top: .1rem
+        }
+
+        .shoe-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: .85rem;
+            padding-top: .85rem;
+            border-top: 1px solid var(--border)
+        }
+
+        .shoe-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.65rem;
+            letter-spacing: .03em;
+            color: var(--accent);
+            line-height: 1
+        }
+
+        .old-price {
+            font-size: 1rem;
+            color: var(--muted);
+            text-decoration: line-through;
+            margin-right: .3rem
+        }
+
+        .btn-add {
+            padding: .4rem .9rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .78rem;
+            font-weight: 600;
+            color: #0a0a0f;
+            background: var(--accent);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform .15s, box-shadow .2s, background .2s;
+            white-space: nowrap
+        }
+
+        .btn-add:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 18px rgba(200, 245, 90, .4);
+            background: #d4f96e
+        }
+
+        .btn-add.added {
+            background: var(--accent2);
+            color: #0a0a0f
+        }
+
+        @media(max-width:600px) {
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))
+            }
+
+            #Pricing {
+                padding: 60px 5vw 80px
+            }
+        }
+
+        /* ══ DOCS SECTION ══ */
+        #Docs {
+            position: relative;
+            z-index: 1;
+            padding: 100px 5vw 120px
+        }
+
+        .docs-wrap {
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        .docs-header {
+            margin-bottom: 3.5rem
+        }
+
+        .docs-layout {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 3rem
+        }
+
+        .docs-sidebar {
+            position: sticky;
+            top: 88px;
+            align-self: start
+        }
+
+        .docs-nav-group {
+            margin-bottom: 2rem
+        }
+
+        .docs-nav-label {
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: .6rem;
+            padding-left: .5rem
+        }
+
+        .docs-nav-link {
+            display: block;
+            padding: .45rem .75rem;
+            font-size: .875rem;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 8px;
+            border-left: 2px solid transparent;
+            transition: color .2s, background .2s, border-color .2s;
+            cursor: pointer
+        }
+
+        .docs-nav-link:hover,
+        .docs-nav-link.active {
+            color: var(--text);
+            background: var(--surface);
+            border-left-color: var(--accent)
+        }
+
+        .docs-content {
+            min-height: 500px
+        }
+
+        .doc-page {
+            display: none
+        }
+
+        .doc-page.active {
+            display: block
+        }
+
+        .doc-page h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            letter-spacing: .04em;
+            margin-bottom: .75rem
+        }
+
+        .doc-page .doc-desc {
+            color: var(--muted);
+            font-size: .95rem;
+            line-height: 1.75;
+            margin-bottom: 2rem;
+            max-width: 580px
+        }
+
+        .doc-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem
+        }
+
+        .doc-step {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: border-color .2s
+        }
+
+        .doc-step:hover {
+            border-color: rgba(200, 245, 90, .2)
+        }
+
+        .step-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--accent);
+            line-height: 1;
+            min-width: 2rem;
+            padding-top: .1rem
+        }
+
+        .step-body h4 {
+            font-size: .95rem;
+            font-weight: 600;
+            margin-bottom: .35rem
+        }
+
+        .step-body p {
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.65
+        }
+
+        .doc-code {
+            background: #0d0d12;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            font-family: monospace;
+            font-size: .82rem;
+            color: #c8f55a;
+            line-height: 1.7;
+            margin-top: 1.5rem;
+            overflow-x: auto
+        }
+
+        .doc-faq {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+            margin-top: 1.5rem
+        }
+
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            overflow: hidden
+        }
+
+        .faq-q {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 1.1rem 1.4rem;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: .9rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: background .2s
+        }
+
+        .faq-q:hover {
+            background: var(--surface)
+        }
+
+        .faq-q svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            flex-shrink: 0;
+            transition: transform .25s
+        }
+
+        .faq-item.open .faq-q svg {
+            transform: rotate(180deg)
+        }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s ease, padding .3s ease
+        }
+
+        .faq-a p {
+            padding: 0 1.4rem 1.1rem;
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.7
+        }
+
+        .faq-item.open .faq-a {
+            max-height: 300px
+        }
+
+        @media(max-width:768px) {
+            .docs-layout {
+                grid-template-columns: 1fr
+            }
+
+            .docs-sidebar {
+                position: static
+            }
+        }
+
+        /* ══ BLOG SECTION ══ */
+        #Blog {
+            position: relative;
+            z-index: 1;
+            padding: 100px 5vw 120px
+        }
+
+        .blog-wrap {
+            max-width: 1300px;
+            margin: 0 auto
+        }
+
+        .blog-header {
+            margin-bottom: 3.5rem
+        }
+
+        .blog-featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem
+        }
+
+        .blog-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .5s ease, transform .5s ease, box-shadow .3s, border-color .3s;
+            cursor: pointer
+        }
+
+        .blog-card.visible {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .blog-card.visible:hover {
+            box-shadow: 0 20px 48px rgba(0, 0, 0, .4);
+            border-color: rgba(200, 245, 90, .18)
+        }
+
+        .blog-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            background: linear-gradient(135deg, #1a1a1a, #0d0d12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative
+        }
+
+        .blog-img-inner {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--c1, #1a1a24), var(--c2, #0d0d12));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            position: relative;
+            overflow: hidden
+        }
+
+        .blog-img-inner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 30%, rgba(200, 245, 90, .07), transparent 60%)
+        }
+
+        .blog-body {
+            padding: 1.5rem 1.75rem 1.75rem
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+            margin-bottom: .85rem
+        }
+
+        .blog-cat {
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: var(--accent-dim);
+            color: var(--accent);
+            border: 1px solid rgba(200, 245, 90, .2)
+        }
+
+        .blog-date {
+            font-size: .75rem;
+            color: var(--muted)
+        }
+
+        .blog-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            letter-spacing: .04em;
+            line-height: 1.1;
+            margin-bottom: .6rem;
+            transition: color .2s
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--accent)
+        }
+
+        .blog-excerpt {
+            font-size: .85rem;
+            color: var(--muted);
+            line-height: 1.7;
+            font-weight: 300
+        }
+
+        .blog-read {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            margin-top: 1rem;
+            font-size: .8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            transition: gap .2s
+        }
+
+        .blog-card:hover .blog-read {
+            gap: .7rem
+        }
+
+        .blog-read svg {
+            width: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem
+        }
+
+        .blog-card.sm .blog-img-inner {
+            height: 140px;
+            font-size: 2rem
+        }
+
+        .blog-card.sm .blog-title {
+            font-size: 1.25rem
+        }
+
+        @media(max-width:700px) {
+            .blog-featured {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* ══ RESPONSIVE NAV ══ */
+        @media(max-width:600px) {
+            #Pricing {
+                padding: 60px 5vw 80px
+            }
+
+            #Docs {
+                padding: 60px 5vw 80px
+            }
+
+            #Blog {
+                padding: 60px 5vw 80px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══ NAV ══ -->
+    <nav>
+        <a href="#Home" class="logo"><span class="logo-dot"></span>KAMSNEAKERS</a>
+        <ul class="nav-links">
+            <li><a href="#Home" class="active">Home</a></li>
+            <li><a href="#Features">Features<span class="badge">New</span></a></li>
+            <li><a href="#Pricing">Pricing</a></li>
+            <li><a href="#Docs">Docs</a></li>
+            <li><a href="#Blog">Blog</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="cart-btn" id="cartBtn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+                Cart
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+            <button class="btn-ghost" id="loginBtn">Log in</button>
+            <button class="btn-primary" id="signupBtn">Get started</button>
+            <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#Home">Home</a>
+        <a href="#Features">Features <span class="badge">New</span></a>
+        <a href="#Pricing">Pricing</a>
+        <a href="#Docs">Docs</a>
+        <a href="#Blog">Blog</a>
+        <div class="divider"></div>
+        <a href="#" id="mobileLoginBtn" style="color:var(--muted)">Log in</a>
+        <button class="btn-primary" id="mobileSignupBtn">Get started</button>
+    </div>
+
+    <!-- ══ OVERLAY ══ -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ══ LOGIN MODAL ══ -->
+    <div class="modal" id="loginModal">
+        <div class="modal-header">
+            <div class="modal-title">Welcome Back</div>
+            <button class="modal-close" id="loginClose">&times;</button>
+        </div>
+        <div id="loginForm">
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input class="form-input" type="email" placeholder="you@example.com" id="loginEmail" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input class="form-input" type="password" placeholder="••••••••" id="loginPassword" />
+            </div>
+            <button class="btn-primary" style="width:100%;padding:.75rem;font-size:.9rem;margin-top:.5rem"
+                id="loginSubmit">Log In</button>
+            <div class="form-divider"><span>or</span></div>
+            <div class="modal-footer">Don't have an account? <a href="#" id="switchToSignup">Sign up</a></div>
+        </div>
+        <div class="auth-success" id="loginSuccess">
+            <div class="success-icon">&#10003;</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.05em;margin-bottom:.5rem">
+                Logged In!</div>
+            <p>Welcome back to KAMSNEAKERS.</p>
+        </div>
+    </div>
+
+    <!-- ══ SIGNUP MODAL ══ -->
+    <div class="modal" id="signupModal">
+        <div class="modal-header">
+            <div class="modal-title">Join KAMSNEAKERS</div>
+            <button class="modal-close" id="signupClose">&times;</button>
+        </div>
+        <div id="signupForm">
+            <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input class="form-input" type="text" placeholder="Your name" id="signupName" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input class="form-input" type="email" placeholder="you@example.com" id="signupEmail" />
+            </div>
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input class="form-input" type="password" placeholder="••••••••" id="signupPassword" />
+            </div>
+            <button class="btn-primary" style="width:100%;padding:.75rem;font-size:.9rem;margin-top:.5rem"
+                id="signupSubmit">Create Account</button>
+            <div class="form-divider"><span>or</span></div>
+            <div class="modal-footer">Already have an account? <a href="#" id="switchToLogin">Log in</a></div>
+        </div>
+        <div class="auth-success" id="signupSuccess">
+            <div class="success-icon">&#127881;</div>
+            <div style="font-family:'Bebas Neue',sans-serif;font-size:1.75rem;letter-spacing:.05em;margin-bottom:.5rem">
+                Account Created!</div>
+            <p>Welcome to the KAMSNEAKERS family.</p>
+        </div>
+    </div>
+
+    <!-- ══ CART DRAWER ══ -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-drawer-header">
+            <div class="cart-drawer-title">Your Cart</div>
+            <button class="modal-close" id="cartClose" style="font-size:1.6rem">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty" id="cartEmpty">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 01-8 0" />
+                </svg>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none">
+            <div class="cart-total">
+                <span class="cart-total-label">Total</span>
+                <span class="cart-total-price" id="cartTotal">$0</span>
+            </div>
+            <button class="btn-checkout" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- ══ TOAST ══ -->
+    <div class="toast" id="toast"><span class="toast-icon">&#10003;</span><span id="toastMsg"></span></div>
+
+    <!-- ══ HERO ══ -->
+    <section id="Home">
+        <main class="demo">
+            <h1>KAMSNEAKERS.<br><span>Move Without Limits.</span></h1>
+            <p>Looking for quality footwear that combines style, comfort, and performance? You've come to the right
+                place.</p>
+            <a href="#Features" class="scroll-cue">Explore features<svg viewBox="0 0 24 24">
+                    <polyline points="6 9 12 15 18 9" />
+                </svg></a>
+        </main>
+    </section>
+
+    <!-- ══ FEATURES ══ -->
+    <section id="Features" class="features-section">
+        <div class="section-label">Why KAMSNEAKERS</div>
+        <h2 class="section-title">Built For<br><span>The Bold</span></h2>
+        <p class="section-subtitle">Every pair is engineered with obsessive attention to comfort, performance, and style
+            so you can move without limits.</p>
+        <div class="features-grid">
+            <div class="feat-card orange card-1" style="--delay:.05s">
+                <div class="card-icon icon-orange">&#9889;</div>
+                <div class="card-tag">Comfort Tech</div>
+                <div class="card-title">AirFlow Cushion System</div>
+                <p class="card-desc">Dual-density foam midsole with responsive rebound absorbs impact and returns energy
+                    mile after mile, step after step.</p>
+                <div class="stat-row">
+                    <div class="stat"><span class="stat-num">40%</span><span class="stat-label">More Cushion</span>
+                    </div>
+                    <div class="stat"><span class="stat-num">3x</span><span class="stat-label">Durability</span></div>
+                    <div class="stat"><span class="stat-num">220g</span><span class="stat-label">Avg Weight</span></div>
+                </div>
+            </div>
+            <div class="feat-card white card-2" style="--delay:.1s">
+                <div class="card-icon icon-white">&#129523;</div>
+                <div class="card-tag">Materials</div>
+                <div class="card-title">Premium Construction</div>
+                <p class="card-desc">Sourced from the world's finest tanneries and recycled-fiber mills. Every material
+                    is chosen for performance and planet.</p>
+                <div class="tech-grid">
+                    <div class="tech-pill"><span class="dot"></span>Recycled Mesh Upper</div>
+                    <div class="tech-pill"><span class="dot"></span>Full-Grain Leather</div>
+                    <div class="tech-pill"><span class="dot"></span>Carbon Rubber Outsole</div>
+                    <div class="tech-pill"><span class="dot"></span>Memory Foam Insole</div>
+                    <div class="tech-pill"><span class="dot"></span>Anti-Slip Grip</div>
+                    <div class="tech-pill"><span class="dot"></span>Water-Repellent Coat</div>
+                    <div class="tech-pill"><span class="dot"></span>Ortho Arch Support</div>
+                </div>
+            </div>
+            <div class="feat-card yellow card-3" style="--delay:.15s">
+                <div class="card-icon icon-yellow">&#127912;</div>
+                <div class="card-tag yellow">Colorways</div>
+                <div class="card-title">12 Exclusive Colors</div>
+                <p class="card-desc">Drop-exclusive colorways every season. Limited runs no two collections alike.</p>
+                <div class="swatches">
+                    <div class="swatch active" style="background:#c8f55a"></div>
+                    <div class="swatch" style="background:#1a1a1a;border:1px solid #444"></div>
+                    <div class="swatch" style="background:#f5f5f0"></div>
+                    <div class="swatch" style="background:#ffcc00"></div>
+                    <div class="swatch" style="background:#3a86ff"></div>
+                    <div class="swatch" style="background:#6a0572"></div>
+                    <div class="swatch" style="background:#2ec4b6"></div>
+                </div>
+            </div>
+            <div class="feat-card yellow card-4" style="--delay:.2s">
+                <div class="card-icon icon-yellow">&#11088;</div>
+                <div class="card-tag yellow">Reviews</div>
+                <div class="rating-big">4.9</div>
+                <div class="stars"><span class="star">&#11088;</span><span class="star">&#11088;</span><span
+                        class="star">&#11088;</span><span class="star">&#11088;</span><span class="star">&#11088;</span>
+                </div>
+                <div style="font-size:.75rem;color:var(--muted);margin-bottom:1rem">Based on 12,400+ reviews</div>
+                <div class="review-bar"><span class="bar-label">5</span>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width:88%;--d:.3s"></div>
+                    </div><span class="bar-count">88%</span>
+                </div>
+                <div class="review-bar"><span class="bar-label">4</span>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width:8%;--d:.4s"></div>
+                    </div><span class="bar-count">8%</span>
+                </div>
+                <div class="review-bar"><span class="bar-label">3</span>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width:3%;--d:.5s"></div>
+                    </div><span class="bar-count">3%</span>
+                </div>
+                <div class="review-bar"><span class="bar-label">2</span>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width:1%;--d:.6s"></div>
+                    </div><span class="bar-count">1%</span>
+                </div>
+            </div>
+            <div class="feat-card white card-5" style="--delay:.25s">
+                <div class="card-icon icon-white">&#128208;</div>
+                <div class="card-tag">Fit Guide</div>
+                <div class="card-title">True To Size Fit</div>
+                <p class="card-desc">Half sizes available. Wide fit option on select styles.</p>
+                <div class="size-row">
+                    <div class="size-chip">6</div>
+                    <div class="size-chip">7</div>
+                    <div class="size-chip active">8</div>
+                    <div class="size-chip">9</div>
+                    <div class="size-chip">10</div>
+                    <div class="size-chip">11</div>
+                    <div class="size-chip">12</div>
+                    <div class="size-chip">13</div>
+                </div>
+                <p class="size-note">&#128161; Between sizes? We recommend sizing up half.</p>
+            </div>
+            <div class="feat-card orange card-6" style="--delay:.3s">
+                <div class="banner-left">
+                    <div class="card-tag">Shopping Promise</div>
+                    <div class="banner-title">Stress-Free Every Step Of The Way</div>
+                    <p class="banner-desc">From first click to doorstep, we have you covered with easy returns, fast
+                        shipping, and real human support.</p>
+                </div>
+                <div class="banner-badges">
+                    <div class="badge-item"><span>&#128666;</span> Free Shipping Over $60</div>
+                    <div class="badge-item"><span>&#8617;</span> 60-Day Free Returns</div>
+                    <div class="badge-item"><span>&#127807;</span> Carbon-Neutral Delivery</div>
+                    <div class="badge-item"><span>&#128172;</span> 24/7 Live Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PRICING ══ -->
+    <section id="Pricing">
+        <div class="pricing-wrap">
+            <div class="pricing-header">
+                <div class="section-label">KAMY'S Collection</div>
+                <h2 class="section-title">Shop The<br><span>Latest Drops</span></h2>
+                <p class="section-subtitle">12 handpicked styles built for those who move with purpose. Limited stock —
+                    don't sleep on it.</p>
+            </div>
+            <div class="pricing-grid">
+
+                <div class="shoe-card" style="--delay:.04s" data-name="CloudRun Pro X" data-brand="KAM Originals"
+                    data-price="149" data-img="https://i.pinimg.com/736x/cd/a2/03/cda2035f39cd84add42511adc488c0ab.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/cd/a2/03/cda2035f39cd84add42511adc488c0ab.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-new">New</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Originals</div>
+                        <div class="shoe-name">CloudRun Pro X</div>
+                        <p class="shoe-desc">Ultra-light mesh upper with AirFlow cushion sole. Built for speed, styled
+                            for streets.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$149</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.07s" data-name="Urban Force 1" data-brand="KAM Street"
+                    data-price="189" data-img="https://i.pinimg.com/736x/1b/66/c4/1b66c485a6043e99098dc9474c7579fd.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/1b/66/c4/1b66c485a6043e99098dc9474c7579fd.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-hot">Hot</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Street</div>
+                        <div class="shoe-name">Urban Force 1</div>
+                        <p class="shoe-desc">Full-grain leather upper, carbon rubber outsole. The everyday classic,
+                            elevated.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$189</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.10s" data-name="Sprint Elite V2" data-brand="KAM Performance"
+                    data-price="159" data-img="https://i.pinimg.com/736x/cd/d1/0b/cdd10b4d9d0dac3b0fc6b91e2d44dd3f.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/cd/d1/0b/cdd10b4d9d0dac3b0fc6b91e2d44dd3f.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-sale">Sale</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Performance</div>
+                        <div class="shoe-name">Sprint Elite V2</div>
+                        <p class="shoe-desc">Engineered for the track but built for the block. Responsive foam,
+                            locked-in fit.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price"><span class="old-price">$210</span>$159</div><button
+                                class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.13s" data-name="Phantom Low OG" data-brand="KAM x Studio"
+                    data-price="265"
+                    data-img="https://i.pinimg.com/1200x/81/af/e4/81afe4e9e9dc243b918ea87f08e182c4.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/1200x/81/af/e4/81afe4e9e9dc243b918ea87f08e182c4.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-ltd">Limited</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM x Studio</div>
+                        <div class="shoe-name">Phantom Low OG</div>
+                        <p class="shoe-desc">Collab drop. Suede toe box, gum sole, waxed laces. Only 200 pairs
+                            worldwide.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$265</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.16s" data-name="Drift Runner S" data-brand="KAM Originals"
+                    data-price="135" data-img="https://i.pinimg.com/736x/07/c5/69/07c569c49c99a344f5c4eb1dff26e122.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/07/c5/69/07c569c49c99a344f5c4eb1dff26e122.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-new">New</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Originals</div>
+                        <div class="shoe-name">Drift Runner S</div>
+                        <p class="shoe-desc">Wide toe box, ortho arch, memory foam insole. All-day comfort, zero
+                            compromise.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$135</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.19s" data-name="NightCrawler Mid" data-brand="KAM Street"
+                    data-price="199" data-img="https://i.pinimg.com/736x/32/bd/14/32bd148a558b240d3679170ef47df89d.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/32/bd/14/32bd148a558b240d3679170ef47df89d.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-hot">Hot</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Street</div>
+                        <div class="shoe-name">NightCrawler Mid</div>
+                        <p class="shoe-desc">Reflective detailing, padded collar, translucent sole. Made for after dark.
+                        </p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$199</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.22s" data-name="TerraGrip Trail" data-brand="KAM Performance"
+                    data-price="129" data-img="https://i.pinimg.com/736x/61/07/ab/6107ab5b4c7b8aebc5cfa82b06293fc5.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/61/07/ab/6107ab5b4c7b8aebc5cfa82b06293fc5.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-sale">Sale</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Performance</div>
+                        <div class="shoe-name">TerraGrip Trail</div>
+                        <p class="shoe-desc">Water-repellent, anti-slip outsole, reinforced toe cap. Owns any terrain.
+                        </p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price"><span class="old-price">$175</span>$129</div><button
+                                class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.25s" data-name="Solar Boost OG" data-brand="KAM x Studio"
+                    data-price="295" data-img="https://i.pinimg.com/736x/6c/a5/96/6ca596a8372daa5e369af2823abb8465.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/6c/a5/96/6ca596a8372daa5e369af2823abb8465.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-ltd">Limited</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM x Studio</div>
+                        <div class="shoe-name">Solar Boost OG</div>
+                        <p class="shoe-desc">Premium knit upper, boost midsole, limited colorway. Season's most wanted.
+                        </p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$295</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.28s" data-name="Apex Low Clean" data-brand="KAM Originals"
+                    data-price="119" data-img="https://i.pinimg.com/736x/33/92/81/339281abd949bb8bb55da37b8626b23e.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/33/92/81/339281abd949bb8bb55da37b8626b23e.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-new">New</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Originals</div>
+                        <div class="shoe-name">Apex Low Clean</div>
+                        <p class="shoe-desc">Minimal silhouette, clean white sole, reinforced eyelets. A timeless
+                            everyday pick.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$119</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.31s" data-name="VoltEdge Runner" data-brand="KAM Street"
+                    data-price="179" data-img="https://i.pinimg.com/736x/cd/bf/e9/cdbfe991d9acd025e41f345b551b2867.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/cd/bf/e9/cdbfe991d9acd025e41f345b551b2867.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-hot">Hot</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Street</div>
+                        <div class="shoe-name">VoltEdge Runner</div>
+                        <p class="shoe-desc">Neon-trim mesh, dual-density foam, sock-like collar. Turns heads on every
+                            block.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$179</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.34s" data-name="PaceMax Ultra" data-brand="KAM Performance"
+                    data-price="189" data-img="https://i.pinimg.com/736x/ae/d0/63/aed063f909ce6eba0453cb250def32de.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/ae/d0/63/aed063f909ce6eba0453cb250def32de.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-sale">Sale</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM Performance</div>
+                        <div class="shoe-name">PaceMax Ultra</div>
+                        <p class="shoe-desc">Carbon fibre plate, ultra-light foam stack. Train harder, recover faster.
+                        </p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price"><span class="old-price">$240</span>$189</div><button
+                                class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="shoe-card" style="--delay:.37s" data-name="MidnightRun High" data-brand="KAM x Studio"
+                    data-price="315" data-img="https://i.pinimg.com/736x/ea/5b/1a/ea5b1af594b2af67db898a25092d69ef.jpg">
+                    <div class="shoe-img-wrap">
+                        <div class="img-placeholder"><img
+                                src="https://i.pinimg.com/736x/ea/5b/1a/ea5b1af594b2af67db898a25092d69ef.jpg"
+                                alt="shoe"></div>
+                        <span class="shoe-badge badge-ltd">Limited</span>
+                    </div>
+                    <div class="shoe-info">
+                        <div class="shoe-brand">KAM x Studio</div>
+                        <div class="shoe-name">MidnightRun High</div>
+                        <p class="shoe-desc">High-top silhouette, tonal laces, debossed logo. One of one energy, limited
+                            run.</p>
+                        <div class="shoe-footer">
+                            <div class="shoe-price">$315</div><button class="btn-add">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ DOCS ══ -->
+    <section id="Docs">
+        <div class="docs-wrap">
+            <div class="docs-header">
+                <div class="section-label">Documentation</div>
+                <h2 class="section-title">How It<br><span>All Works</span></h2>
+                <p class="section-subtitle">Everything you need to order, track, and return your kicks — no hassle, no
+                    fluff.</p>
+            </div>
+            <div class="docs-layout">
+                <div class="docs-sidebar">
+                    <div class="docs-nav-group">
+                        <div class="docs-nav-label">Getting Started</div>
+                        <a class="docs-nav-link active" data-doc="ordering">How to Order</a>
+                        <a class="docs-nav-link" data-doc="sizing">Size Guide</a>
+                        <a class="docs-nav-link" data-doc="account">Your Account</a>
+                    </div>
+                    <div class="docs-nav-group">
+                        <div class="docs-nav-label">Orders & Shipping</div>
+                        <a class="docs-nav-link" data-doc="shipping">Shipping Info</a>
+                        <a class="docs-nav-link" data-doc="tracking">Track Your Order</a>
+                        <a class="docs-nav-link" data-doc="returns">Returns & Refunds</a>
+                    </div>
+                    <div class="docs-nav-group">
+                        <div class="docs-nav-label">Support</div>
+                        <a class="docs-nav-link" data-doc="faq">FAQ</a>
+                        <a class="docs-nav-link" data-doc="care">Shoe Care</a>
+                    </div>
+                </div>
+                <div class="docs-content">
+
+                    <div class="doc-page active" id="doc-ordering">
+                        <h3>How To Order</h3>
+                        <p class="doc-desc">Placing an order on KAMSNEAKERS takes less than 2 minutes. Browse, pick your
+                            size, and check out — we handle the rest.</p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">01</div>
+                                <div class="step-body">
+                                    <h4>Browse the Collection</h4>
+                                    <p>Head to the Pricing section and explore our 12 drops. Filter by badge — New, Hot,
+                                        Sale, or Limited.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">02</div>
+                                <div class="step-body">
+                                    <h4>Select Your Size</h4>
+                                    <p>Use our True-To-Size guide. If you're between sizes, we recommend going half a
+                                        size up.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">03</div>
+                                <div class="step-body">
+                                    <h4>Add to Cart</h4>
+                                    <p>Hit the green "Add to Cart" button. Your cart updates instantly in the top nav.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">04</div>
+                                <div class="step-body">
+                                    <h4>Checkout Securely</h4>
+                                    <p>Open your cart, review your items, and hit Checkout. We accept all major cards
+                                        and PayPal.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-page" id="doc-sizing">
+                        <h3>Size Guide</h3>
+                        <p class="doc-desc">All KAMSNEAKERS styles are true to size. Use the chart below to find your
+                            perfect fit.</p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">US</div>
+                                <div class="step-body">
+                                    <h4>US 6 — EU 39 — UK 5.5 — 24cm</h4>
+                                    <p>Narrow to regular fit. Available in select colorways.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">US</div>
+                                <div class="step-body">
+                                    <h4>US 8 — EU 41 — UK 7.5 — 26cm</h4>
+                                    <p>Our most popular size. All styles available.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">US</div>
+                                <div class="step-body">
+                                    <h4>US 10 — EU 43 — UK 9.5 — 28cm</h4>
+                                    <p>Wide fit available on CloudRun Pro X and Drift Runner S.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">US</div>
+                                <div class="step-body">
+                                    <h4>US 13 — EU 47 — UK 12.5 — 31cm</h4>
+                                    <p>Extended sizing. Allow 2 extra days for dispatch.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-page" id="doc-account">
+                        <h3>Your Account</h3>
+                        <p class="doc-desc">Create an account to track orders, save your size, and get early access to
+                            Limited drops.</p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">01</div>
+                                <div class="step-body">
+                                    <h4>Sign Up</h4>
+                                    <p>Click "Get started" in the nav. Enter your name, email, and a password. That's
+                                        it.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">02</div>
+                                <div class="step-body">
+                                    <h4>Verify Your Email</h4>
+                                    <p>Check your inbox for a verification link. Click it to activate your account.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">03</div>
+                                <div class="step-body">
+                                    <h4>Set Your Preferences</h4>
+                                    <p>Save your default size, shipping address, and payment method for faster checkout.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-page" id="doc-shipping">
+                        <h3>Shipping Info</h3>
+                        <p class="doc-desc">We ship worldwide. All orders over $60 ship free. Orders placed before 2pm
+                            ship same day.</p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">&#128666;</div>
+                                <div class="step-body">
+                                    <h4>Standard — Free over $60 (3–5 days)</h4>
+                                    <p>Free on orders over $60. Tracked from warehouse to your door.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">&#9889;</div>
+                                <div class="step-body">
+                                    <h4>Express — $12 (1–2 days)</h4>
+                                    <p>Next-day available for most locations. Order before 2pm for same-day dispatch.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">&#127758;</div>
+                                <div class="step-body">
+                                    <h4>International — $18 (5–10 days)</h4>
+                                    <p>We ship to 60+ countries. Duties and taxes may apply at customs.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-page" id="doc-tracking">
+                        <h3>Track Your Order</h3>
+                        <p class="doc-desc">Once your order ships, you'll receive a tracking link via email. You can
+                            also track from your account dashboard.</p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">01</div>
+                                <div class="step-body">
+                                    <h4>Confirmation Email</h4>
+                                    <p>You'll receive an order confirmation immediately after checkout with your order
+                                        number.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">02</div>
+                                <div class="step-body">
+                                    <h4>Shipping Email</h4>
+                                    <p>Once dispatched, a tracking link is sent. Updates every 4–6 hours in transit.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">03</div>
+                                <div class="step-body">
+                                    <h4>Delivery</h4>
+                                    <p>Signature required for orders over $200. Someone must be present to receive the
+                                        package.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doc-code">Track URL: kamsneakers.com/track?order=KAM-XXXXXXX</div>
+                    </div>
+
+                    <div class="doc-page" id="doc-returns">
+                        <h3>Returns &amp; Refunds</h3>
+                        <p class="doc-desc">Not feeling it? No problem. We offer 60-day free returns on all unworn items
+                            in original packaging.</p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">01</div>
+                                <div class="step-body">
+                                    <h4>Start a Return</h4>
+                                    <p>Log in to your account, go to Orders, and click "Return Item" within 60 days of
+                                        delivery.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">02</div>
+                                <div class="step-body">
+                                    <h4>Print Label</h4>
+                                    <p>We'll email you a prepaid return label. Drop off at any partner location.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">03</div>
+                                <div class="step-body">
+                                    <h4>Refund Processed</h4>
+                                    <p>Refunds hit your original payment method within 3–5 business days of us receiving
+                                        the item.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-page" id="doc-faq">
+                        <h3>FAQ</h3>
+                        <p class="doc-desc">Quick answers to the questions we get asked the most.</p>
+                        <div class="doc-faq">
+                            <div class="faq-item">
+                                <button class="faq-q">Are KAMSNEAKERS true to size?<svg viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg></button>
+                                <div class="faq-a">
+                                    <p>Yes. All our styles are true to size. If you're between sizes, we recommend going
+                                        half a size up for a more comfortable fit.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-q">How long does shipping take?<svg viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg></button>
+                                <div class="faq-a">
+                                    <p>Standard shipping takes 3–5 business days. Express is 1–2 days. International
+                                        orders take 5–10 days depending on your location.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-q">Can I cancel or change my order?<svg viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg></button>
+                                <div class="faq-a">
+                                    <p>Orders can be cancelled within 1 hour of placement. After that, they enter
+                                        fulfillment and can't be changed — but you can return them once delivered.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-q">Are Limited drops restocked?<svg viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg></button>
+                                <div class="faq-a">
+                                    <p>No. Limited drops are one-time releases. Once they're gone, they're gone. Sign up
+                                        for our newsletter to get early access to future drops.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-q">Do you offer wide fit options?<svg viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg></button>
+                                <div class="faq-a">
+                                    <p>Wide fit is available on the CloudRun Pro X and Drift Runner S. Select "Wide"
+                                        from the size picker when those styles are in your cart.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doc-page" id="doc-care">
+                        <h3>Shoe Care</h3>
+                        <p class="doc-desc">Keep your kicks looking fresh with these care tips from our product team.
+                        </p>
+                        <div class="doc-steps">
+                            <div class="doc-step">
+                                <div class="step-num">&#129529;</div>
+                                <div class="step-body">
+                                    <h4>Clean After Every Wear</h4>
+                                    <p>Wipe down the sole and upper with a damp cloth after each use to prevent dirt
+                                        buildup.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">&#127794;</div>
+                                <div class="step-body">
+                                    <h4>Air Dry Only</h4>
+                                    <p>Never put your sneakers in the dryer. Stuff them with newspaper and leave in a
+                                        ventilated area.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">&#128149;</div>
+                                <div class="step-body">
+                                    <h4>Use a Sneaker Protector</h4>
+                                    <p>Spray water and stain repellent on new shoes before first wear. Re-apply every
+                                        3–4 weeks.</p>
+                                </div>
+                            </div>
+                            <div class="doc-step">
+                                <div class="step-num">&#128230;</div>
+                                <div class="step-body">
+                                    <h4>Store in the Box</h4>
+                                    <p>Keep shoes in their original box away from direct sunlight to preserve color and
+                                        material integrity.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ BLOG ══ -->
+    <section id="Blog">
+        <div class="blog-wrap">
+            <div class="blog-header">
+                <div class="section-label">From The Team</div>
+                <h2 class="section-title">Stories &amp;<br><span>Drops</span></h2>
+                <p class="section-subtitle">Culture, collabs, and care tips — straight from the KAMSNEAKERS crew.</p>
+            </div>
+
+            <div class="blog-featured">
+                <div class="blog-card" style="--delay:.05s">
+                    <div class="blog-img-inner" style="--c1:#0d1a00;--c2:#0a0a0f">&#128248;</div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span class="blog-cat">Culture</span><span class="blog-date">Feb 28,
+                                2026</span></div>
+                        <div class="blog-title">How The Streets Shaped Our Spring 2026 Collection</div>
+                        <p class="blog-excerpt">From Lagos to London, we hit the ground running — literally. Here's how
+                            the energy of the city became the DNA of our boldest drop yet.</p>
+                        <span class="blog-read">Read more<svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="blog-card" style="--delay:.1s">
+                    <div class="blog-img-inner" style="--c1:#1a1000;--c2:#0a0a0f">&#127775;</div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span class="blog-cat">Drop Alert</span><span class="blog-date">Feb 20,
+                                2026</span></div>
+                        <div class="blog-title">Phantom Low OG x Studio: The Collab Nobody Saw Coming</div>
+                        <p class="blog-excerpt">200 pairs. One weekend. We linked up with Studio to create something
+                            that breaks every rule we had. Here's the full story behind the collab.</p>
+                        <span class="blog-read">Read more<svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-grid">
+                <div class="blog-card sm" style="--delay:.15s">
+                    <div class="blog-img-inner" style="--c1:#001a0d;--c2:#0a0f0a;height:140px">&#127807;</div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span class="blog-cat">Sustainability</span><span class="blog-date">Feb
+                                10, 2026</span></div>
+                        <div class="blog-title">Why We Switched To Carbon-Neutral Delivery</div>
+                        <p class="blog-excerpt">Our pledge to ship every pair without adding to the planet's burden —
+                            and how we're making it work.</p>
+                        <span class="blog-read">Read more<svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="blog-card sm" style="--delay:.2s">
+                    <div class="blog-img-inner" style="--c1:#1a0a00;--c2:#0f0a0a;height:140px">&#9889;</div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span class="blog-cat">Tech</span><span class="blog-date">Jan 30,
+                                2026</span></div>
+                        <div class="blog-title">Inside The AirFlow Cushion System</div>
+                        <p class="blog-excerpt">A deep dive into the dual-density foam tech that makes every step feel
+                            like you're floating.</p>
+                        <span class="blog-read">Read more<svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="blog-card sm" style="--delay:.25s">
+                    <div class="blog-img-inner" style="--c1:#0a001a;--c2:#0a0a0f;height:140px">&#128161;</div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span class="blog-cat">Care</span><span class="blog-date">Jan 18,
+                                2026</span></div>
+                        <div class="blog-title">5 Ways To Keep Your Sneakers Looking New</div>
+                        <p class="blog-excerpt">Our product team shares the exact routine they use on every pair before
+                            it leaves the warehouse.</p>
+                        <span class="blog-read">Read more<svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></span>
+                    </div>
+                </div>
+                <div class="blog-card sm" style="--delay:.3s">
+                    <div class="blog-img-inner" style="--c1:#001018;--c2:#0a0d0f;height:140px">&#127758;</div>
+                    <div class="blog-body">
+                        <div class="blog-meta"><span class="blog-cat">Community</span><span class="blog-date">Jan 5,
+                                2026</span></div>
+                        <div class="blog-title">We Now Ship To 60+ Countries — Here's What Changed</div>
+                        <p class="blog-excerpt">How we upgraded our logistics to get your order to your door no matter
+                            where in the world you are.</p>
+                        <span class="blog-read">Read more<svg viewBox="0 0 24 24">
+                                <polyline points="9 18 15 12 9 6" />
+                            </svg></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ── HAMBURGER ──
+        const hamburgerBtn = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        hamburgerBtn.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            hamburgerBtn.classList.toggle('open', open);
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); hamburgerBtn.classList.remove('open') }));
+
+        // ── OVERLAY HELPER ──
+        const overlay = document.getElementById('overlay');
+        function showOverlay() { overlay.classList.add('show') }
+        function hideOverlay() { overlay.classList.remove('show') }
+
+        // ── MODAL HELPER ──
+        function openModal(id) { document.getElementById(id).classList.add('show'); showOverlay() }
+        function closeModal(id) { document.getElementById(id).classList.remove('show'); hideOverlay() }
+        overlay.addEventListener('click', () => {
+            closeModal('loginModal'); closeModal('signupModal'); closeCart();
+        });
+
+        // ── LOGIN ──
+        document.getElementById('loginBtn').addEventListener('click', () => openModal('loginModal'));
+        document.getElementById('mobileLoginBtn').addEventListener('click', (e) => { e.preventDefault(); mobileMenu.classList.remove('open'); openModal('loginModal') });
+        document.getElementById('loginClose').addEventListener('click', () => closeModal('loginModal'));
+        document.getElementById('loginSubmit').addEventListener('click', () => {
+            const email = document.getElementById('loginEmail').value.trim();
+            const pass = document.getElementById('loginPassword').value;
+            if (!email || !pass) { showToast('Please fill in all fields'); return; }
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('loginSuccess').style.display = 'block';
+            setTimeout(() => closeModal('loginModal'), 2000);
+            setTimeout(() => { document.getElementById('loginForm').style.display = 'block'; document.getElementById('loginSuccess').style.display = 'none'; }, 2400);
+        });
+
+        // ── SIGNUP ──
+        document.getElementById('signupBtn').addEventListener('click', () => openModal('signupModal'));
+        document.getElementById('mobileSignupBtn').addEventListener('click', () => { mobileMenu.classList.remove('open'); openModal('signupModal') });
+        document.getElementById('signupClose').addEventListener('click', () => closeModal('signupModal'));
+        document.getElementById('signupSubmit').addEventListener('click', () => {
+            const name = document.getElementById('signupName').value.trim();
+            const email = document.getElementById('signupEmail').value.trim();
+            const pass = document.getElementById('signupPassword').value;
+            if (!name || !email || !pass) { showToast('Please fill in all fields'); return; }
+            document.getElementById('signupForm').style.display = 'none';
+            document.getElementById('signupSuccess').style.display = 'block';
+            setTimeout(() => closeModal('signupModal'), 2200);
+            setTimeout(() => { document.getElementById('signupForm').style.display = 'block'; document.getElementById('signupSuccess').style.display = 'none'; }, 2600);
+        });
+        document.getElementById('switchToSignup').addEventListener('click', (e) => { e.preventDefault(); closeModal('loginModal'); setTimeout(() => openModal('signupModal'), 200) });
+        document.getElementById('switchToLogin').addEventListener('click', (e) => { e.preventDefault(); closeModal('signupModal'); setTimeout(() => openModal('loginModal'), 200) });
+
+        // ── CART STATE ──
+        let cart = [];
+        function openCart() { document.getElementById('cartDrawer').classList.add('open'); showOverlay() }
+        function closeCart() { document.getElementById('cartDrawer').classList.remove('open'); if (!document.querySelector('.modal.show')) hideOverlay() }
+        document.getElementById('cartBtn').addEventListener('click', openCart);
+        document.getElementById('cartClose').addEventListener('click', closeCart);
+
+        function renderCart() {
+            const list = document.getElementById('cartItems');
+            const empty = document.getElementById('cartEmpty');
+            const footer = document.getElementById('cartFooter');
+            const countEl = document.getElementById('cartCount');
+            const totalEl = document.getElementById('cartTotal');
+            list.querySelectorAll('.cart-item').forEach(el => el.remove());
+            if (cart.length === 0) {
+                empty.style.display = 'flex'; footer.style.display = 'none';
+                countEl.classList.remove('show');
+            } else {
+                empty.style.display = 'none'; footer.style.display = 'block';
+                countEl.textContent = cart.length; countEl.classList.add('show');
+                let total = 0;
+                cart.forEach((item, idx) => {
+                    total += item.price;
+                    const div = document.createElement('div');
+                    div.className = 'cart-item';
+                    div.innerHTML = '<img class="cart-item-img" src="' + item.img + '" alt="' + item.name + '" onerror="this.style.background=\'#1c1c1c\'"><div class="cart-item-info"><div class="cart-item-brand">' + item.brand + '</div><div class="cart-item-name">' + item.name + '</div><div class="cart-item-price">$' + item.price + '</div></div><button class="cart-item-remove" data-idx="' + idx + '"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
+                    list.appendChild(div);
+                });
+                totalEl.textContent = '$' + total;
+            }
+            list.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.dataset.idx);
+                    cart.splice(idx, 1); renderCart();
+                });
+            });
+        }
+
+        // ── ADD TO CART ──
+        document.querySelectorAll('.btn-add').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.shoe-card');
+                const name = card.dataset.name;
+                const brand = card.dataset.brand;
+                const price = parseInt(card.dataset.price);
+                const img = card.dataset.img;
+                cart.push({ name, brand, price, img });
+                renderCart();
+                showToast(name + ' added to cart');
+                btn.textContent = 'Added!'; btn.classList.add('added');
+                setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('added') }, 2000);
+            });
+        });
+
+        document.getElementById('checkoutBtn').addEventListener('click', () => {
+            showToast('Redirecting to checkout...');
+            setTimeout(() => { cart = []; renderCart(); closeCart(); }, 1500);
+        });
+
+        // ── TOAST ──
+        function showToast(msg) {
+            const t = document.getElementById('toast');
+            document.getElementById('toastMsg').textContent = msg;
+            t.classList.add('show');
+            clearTimeout(t._timer);
+            t._timer = setTimeout(() => t.classList.remove('show'), 2800);
+        }
+
+        // ── ACTIVE NAV ON SCROLL ──
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sectionObs = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    const a = document.querySelector('.nav-links a[href="#' + entry.target.id + '"]');
+                    if (a) a.classList.add('active');
+                }
+            });
+        }, { threshold: 0.25 });
+        sections.forEach(s => sectionObs.observe(s));
+
+        // ── CARD ENTRANCE ANIMATIONS ──
+        const allCards = document.querySelectorAll('.feat-card,.shoe-card,.blog-card');
+        const cardObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    const d = e.target.style.getPropertyValue('--delay') || '0s';
+                    e.target.style.transitionDelay = d;
+                    e.target.classList.add('visible');
+                    cardObs.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        allCards.forEach(c => cardObs.observe(c));
+
+        // ── SWATCH / SIZE TOGGLES ──
+        document.querySelectorAll('.swatch').forEach(s => { s.addEventListener('click', () => { s.closest('.swatches').querySelectorAll('.swatch').forEach(x => x.classList.remove('active')); s.classList.add('active') }) });
+        document.querySelectorAll('.size-chip').forEach(c => { c.addEventListener('click', () => { c.closest('.size-row').querySelectorAll('.size-chip').forEach(x => x.classList.remove('active')); c.classList.add('active') }) });
+
+        // ── DOCS NAV ──
+        document.querySelectorAll('.docs-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const doc = link.dataset.doc;
+                document.querySelectorAll('.docs-nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.doc-page').forEach(p => p.classList.remove('active'));
+                link.classList.add('active');
+                const page = document.getElementById('doc-' + doc);
+                if (page) page.classList.add('active');
+            });
+        });
+
+        // ── FAQ ACCORDION ──
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.closest('.faq-item');
+                const wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+
+</html>
