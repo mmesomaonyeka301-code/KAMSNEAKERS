@@ -1,278 +1,170 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0a0a0a,1a1a1a,0a0a0a&height=20&section=header" width="100%"/>
-
-```
-██╗  ██╗ █████╗ ███╗   ███╗    ███████╗███╗   ██╗███████╗ █████╗ ██╗  ██╗███████╗██████╗ ███████╗
-██║ ██╔╝██╔══██╗████╗ ████║    ██╔════╝████╗  ██║██╔════╝██╔══██╗██║ ██╔╝██╔════╝██╔══██╗██╔════╝
-█████╔╝ ███████║██╔████╔██║    ███████╗██╔██╗ ██║█████╗  ███████║█████╔╝ █████╗  ██████╔╝███████╗
-██╔═██╗ ██╔══██║██║╚██╔╝██║    ╚════██║██║╚██╗██║██╔══╝  ██╔══██║██╔═██╗ ██╔══╝  ██╔══██╗╚════██║
-██║  ██╗██║  ██║██║ ╚═╝ ██║    ███████║██║ ╚████║███████╗██║  ██║██║  ██╗███████╗██║  ██║███████║
-╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝    ╚══════╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝
-```
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0a0a0a,1a1a1a,0a0a0a&height=20&section=header" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,000000,50,003300,100,000000&height=250&section=header&text=KamSneakers%20👟&fontSize=65&fontColor=39ff14&fontAlignY=45&desc=Premium%20Sneaker%20Store%20•%20Built%20Different&descSize=17&descAlignY=68&descColor=cccccc&animation=fadeIn" width="100%"/>
 
 <br/>
 
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=90&fit=crop" width="55%" style="border-radius:0px; filter: contrast(1.1)"/>
-
-<br/>
-
-```
-             ╔══════════════════════════════════════════╗
-             ║   WHERE EVERY STEP IS A STATEMENT. ™    ║
-             ╚══════════════════════════════════════════╝
-```
-
-<br/>
-
-![Store](https://img.shields.io/badge/KamSneakers-Premium%20Store-CC0000?style=for-the-badge&labelColor=0a0a0a)
+[![Live Site](https://img.shields.io/badge/🌐_Live_Site-kamsneakers.netlify.app-39ff14?style=for-the-badge&labelColor=000000)](https://kamsneakers.netlify.app)
 &nbsp;
-![Stack](https://img.shields.io/badge/HTML%20·%20CSS%20·%20JS-Built%20From%20Scratch-1a1a1a?style=for-the-badge&labelColor=CC0000)
+[![HTML](https://img.shields.io/badge/HTML5-000000?style=for-the-badge&logo=html5&logoColor=39ff14)](https://kamsneakers.netlify.app)
 &nbsp;
-![Status](https://img.shields.io/badge/Status-Live%20%26%20Selling-CC0000?style=for-the-badge&labelColor=0a0a0a)
+[![CSS](https://img.shields.io/badge/CSS3-000000?style=for-the-badge&logo=css3&logoColor=39ff14)](https://kamsneakers.netlify.app)
+&nbsp;
+[![JS](https://img.shields.io/badge/JavaScript-000000?style=for-the-badge&logo=javascript&logoColor=39ff14)](https://kamsneakers.netlify.app)
+&nbsp;
+[![Netlify](https://img.shields.io/badge/Netlify-000000?style=for-the-badge&logo=netlify&logoColor=39ff14)](https://kamsneakers.netlify.app)
+
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=39FF14&background=00000000&center=true&vCenter=true&width=600&lines=Premium+Sneaker+Store+%F0%9F%91%9F;Built+with+Pure+HTML%2C+CSS+%26+JS;Smooth+Animations+%E2%9C%A8;Curated+Sneaker+Collections;Where+Every+Step+is+a+Statement." alt="Typing SVG" />
 
 <br/>
 
 </div>
 
 ---
+
+## 🟢 About KamSneakers
+
+**KamSneakers** is a premium sneaker e-commerce store built entirely from scratch — no frameworks, no templates, no shortcuts. Just raw **HTML, CSS and JavaScript** crafted with intention.
+
+The experience is defined by its **black and electric green** identity — dark, sharp and alive — with smooth hover effects, sliding transitions and a scroll experience that feels as premium as the sneakers themselves.
+
+> *Where every step is a statement.* 👟
+
+---
+
+## ✨ Features
 
 <div align="center">
 
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ◈  THE STORE  ◈  THE STACK  ◈  THE SETUP  ◈  THE API  ◈
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
+| &nbsp; | Feature | Description |
+|:---:|:---|:---|
+| 🟢 | **Sneaker Collections** | Curated drops organized by category — browse by style, brand or vibe |
+| 🖤 | **Smooth Scroll** | The entire site flows — no jarring jumps, just clean seamless movement |
+| 🟢 | **Hover Reveals** | Product cards come alive on hover with silky smooth detail reveals |
+| 🖤 | **Sliding Transitions** | Sections and pages slide in with precision and premium polish |
+| 🟢 | **Fully Responsive** | Pixel-perfect on desktop, tablet and mobile |
+| 🖤 | **Zero Dependencies** | Pure vanilla code — no React, no Bootstrap, nothing extra |
 
 </div>
 
 ---
 
-## ◈ THE STORE
+## 📊 GitHub Stats
 
-**KamSneakers** is a luxury sneaker e-commerce experience — built with zero frameworks, pure craftsmanship, raw HTML, CSS and JavaScript. Every detail is intentional. Every pixel is deliberate.
+<div align="center">
 
-This isn't just a shop. It's a destination for people who take their footwear seriously.
+<img src="https://github-readme-stats.vercel.app/api?username=kamsneakers&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&icon_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
+&nbsp;&nbsp;
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kamsneakers&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
 
-> *Curated drops. Premium pairs. No compromises.*
-
----
-
-## ◈ FEATURES
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                                                                   │
-│   🖤  Premium product grid with hover reveals                     │
-│   🔴  Dynamic size selection & stock indicators                   │
-│   🖤  Smooth cart system with quantity control                    │
-│   🔴  Secure checkout powered by Paystack                        │
-│   🖤  Curated collections — Runners · Classics · Collabs         │
-│   🔴  Search & filter by brand, size, price                      │
-│   🖤  Product detail pages with full image gallery               │
-│   🔴  Order confirmation & receipt flow                          │
-│   🖤  Fully responsive — desktop to mobile                       │
-│   🔴  Zero dependencies — pure vanilla code                      │
-│                                                                   │
-└─────────────────────────────────────────────────────────────────┘
-```
+</div>
 
 ---
 
-## ◈ PROJECT STRUCTURE
+## 🛠️ Tech Stack
 
-```
-👟 kamsneakers/
-│
-├── 📄 index.html          ← Landing page & hero
-├── 📄 shop.html           ← Full product catalogue
-├── 📄 product.html        ← Single product detail page
-├── 📄 cart.html           ← Cart & checkout flow
-├── 📄 README.md           ← You are here.
-└── 📄 LICENSE             ← MIT
-```
+<div align="center">
+
+<img src="https://skillicons.dev/icons?i=html,css,js,netlify,vscode,git&theme=dark" />
+
+</div>
+
+<br/>
+
+<div align="center">
+
+| Layer | Technology |
+|:---|:---|
+| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
+| **Animations** | Pure CSS keyframes & JS transitions |
+| **Fonts** | Google Fonts |
+| **Hosting** | Netlify |
+| **Version Control** | Git & GitHub |
+| **Build Tools** | None — zero dependencies 🖤 |
+
+</div>
 
 ---
 
-## ◈ DEPLOY TO GITHUB PAGES
+## 🎨 Colour Palette
 
-**— Step 01 · Create Your Repository**
+<div align="center">
 
-```
-① Go to github.com → sign in
-② Click  +  →  New Repository
-③ Name it:  kamsneakers
-④ Visibility: Public
-⑤ Check "Add a README file"
-⑥ Hit  Create repository
-```
+![Black](https://img.shields.io/badge/%23000000-Void%20Black-000000?style=for-the-badge&labelColor=000000&color=000000)
+![Electric Green](https://img.shields.io/badge/%2339FF14-Electric%20Green-39ff14?style=for-the-badge&labelColor=000000&color=39ff14)
+![Dark Surface](https://img.shields.io/badge/%230D0D0D-Dark%20Surface-0d0d0d?style=for-the-badge&labelColor=000000&color=0d0d0d)
+![Deep Green](https://img.shields.io/badge/%230A2E0A-Deep%20Green-0a2e0a?style=for-the-badge&labelColor=000000&color=0a2e0a)
+![White](https://img.shields.io/badge/%23FFFFFF-Pure%20White-ffffff?style=for-the-badge&labelColor=000000&color=ffffff)
+![Smoke](https://img.shields.io/badge/%23888888-Smoke%20Grey-888888?style=for-the-badge&labelColor=000000&color=888888)
 
-**— Step 02 · Upload Your Files**
+</div>
+
+---
+
+## 🚀 Getting Started
+
+**Run Locally**
 
 ```bash
-# Via Git CLI:
+# Clone the repo
 git clone https://github.com/YOUR_USERNAME/kamsneakers.git
+
+# Navigate into it
 cd kamsneakers
 
+# Open in browser — no installs needed
+open index.html
+```
+
+**Deploy to GitHub Pages**
+
+```bash
+# Push your code
 git add .
-git commit -m "🖤 KamSneakers — launch"
+git commit -m "👟 KamSneakers — launch drop"
 git push origin main
 ```
 
 ```
-# Via Drag & Drop:
-① Open repo on GitHub
-② Add file → Upload files
-③ Drag in all your project files
-④ Commit message:  🖤 Initial drop
-⑤ Commit changes
-```
-
-**— Step 03 · Go Live**
-
-```
-① Repo → Settings → Pages
-② Source: Deploy from a branch
-③ Branch: main  |  Folder: / (root)
-④ Save — wait 60 seconds
-⑤ Your store is live at:
-
-   https://YOUR_USERNAME.github.io/kamsneakers
+Repo → Settings → Pages
+Source: Deploy from branch → main → / (root) → Save
+Live at: https://YOUR_USERNAME.github.io/kamsneakers
 ```
 
 ---
 
-## ◈ PAYMENT SETUP (PAYSTACK)
-
-**— Step 01 · Create Account**
-```
-→ dashboard.paystack.com
-→ Sign up with business email
-→ Complete KYC (BVN + valid ID)
-```
-
-**— Step 02 · Get Your Key**
-```
-Dashboard → Settings → API Keys & Webhooks
-Copy:  pk_live_...   (live)
-  or:  pk_test_...   (testing)
-```
-
-**— Step 03 · Add It to Your Code**
-
-```javascript
-// In index.html or cart.html — find this line:
-const PAYSTACK_KEY = 'pk_test_xxxxxxxxxxxxxxxxxxxxxxxx';
-
-// Replace with your real key:
-const PAYSTACK_KEY = 'pk_live_yourrealkeyhere';
-```
-
-**— Step 04 · Link Your Bank**
-```
-Dashboard → Settings → Bank Account → Add Account
-Select your bank → Enter account number
-Paystack verifies → payments auto-settle daily ✓
-```
-
-> 🔐 Rule #1 — **Never** expose your **Secret Key** in frontend code. Public Key only.
-
----
-
-## ◈ API KEYS REFERENCE
-
-| Service | Where to Get It | Where It Goes |
-|---|---|---|
-| **Paystack Public Key** | [dashboard.paystack.com](https://dashboard.paystack.com) | `cart.html` or `index.html` |
-| **Unsplash Access Key** | [unsplash.com/developers](https://unsplash.com/developers) | `shop.html` (if used) |
-
----
-
-## ◈ COLOUR PALETTE
+## 📁 Project Structure
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│                                                            │
-│   ██████  #0A0A0A  —  Void Black    Primary background    │
-│   ██████  #1A1A1A  —  Charcoal      Cards, surfaces       │
-│   ██████  #CC0000  —  Blood Red     CTAs, accents, fire   │
-│   ██████  #8B0000  —  Deep Red      Hover states          │
-│   ██████  #2B2B2B  —  Dark Grey     Borders, dividers     │
-│   ██████  #9A9A9A  —  Silver        Muted text, labels    │
-│   ██████  #FFFFFF  —  White         Headlines, contrast   │
-│                                                            │
-└──────────────────────────────────────────────────────────┘
+👟 kamsneakers/
+│
+├── 📄 index.html        ← Hero & landing experience
+├── 📄 shop.html         ← Full sneaker catalogue & collections
+├── 📄 product.html      ← Single product detail page
+├── 📄 README.md         ← You're here ✨
+└── 📄 LICENSE           ← MIT
 ```
 
 ---
 
-## ◈ TECH STACK
+## ✅ Launch Checklist
 
-<div align="center">
-
-![HTML5](https://img.shields.io/badge/HTML5-0a0a0a?style=for-the-badge&logo=html5&logoColor=CC0000)
-&nbsp;
-![CSS3](https://img.shields.io/badge/CSS3-1a1a1a?style=for-the-badge&logo=css3&logoColor=CC0000)
-&nbsp;
-![JavaScript](https://img.shields.io/badge/JavaScript-0a0a0a?style=for-the-badge&logo=javascript&logoColor=CC0000)
-&nbsp;
-![Paystack](https://img.shields.io/badge/Paystack-CC0000?style=for-the-badge&logoColor=white)
-&nbsp;
-![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-1a1a1a?style=for-the-badge&logo=github&logoColor=white)
-&nbsp;
-![Zero Deps](https://img.shields.io/badge/Dependencies-0%20👟-CC0000?style=for-the-badge)
-
-</div>
-
-<br/>
-
-| Layer | Technology |
-|---|---|
-| **Frontend** | HTML5, CSS3, Vanilla JavaScript |
-| **Fonts** | Custom premium typography (Google Fonts) |
-| **Payments** | Paystack Inline JS |
-| **Hosting** | GitHub Pages / Netlify |
-| **Build Tools** | None — zero dependencies |
-| **Images** | Unsplash API or custom product shots |
+- [ ] Collections loading with correct products
+- [ ] Hover effects smooth on all product cards
+- [ ] Smooth scroll working across all pages
+- [ ] Sliding transitions running without lag
+- [ ] Responsive on mobile, tablet and desktop
+- [ ] Netlify deploy live and accessible
+- [ ] All sneaker images optimised for web
+- [ ] Meta title and description set
 
 ---
 
-## ◈ REPO SETUP CHECKLIST
+## 📄 License
 
-```
-  Before you go live, run through this:
-```
-
-- [ ] Repository named `kamsneakers`
-- [ ] Description set in About section
-- [ ] Live URL added to repo profile
-- [ ] Topics added — `sneakers` `ecommerce` `html` `css` `javascript` `paystack` `streetwear` `nigeria`
-- [ ] GitHub Pages enabled in Settings → Pages
-- [ ] Paystack public key replaced in code
-- [ ] Bank account linked in Paystack dashboard
-- [ ] All product images loading correctly
-- [ ] Cart & checkout tested end-to-end
-- [ ] Mobile responsiveness confirmed
-
----
-
-## ◈ LICENSE
-
-```
-MIT License  ©  2025  KamSneakers
-
-Free to use. Free to modify. Free to distribute.
-Just don't remove the credits. Respect the craft.
-```
-
----
-
-## ◈ SUPPORT
-
-Open an **Issue** on this repo. Include the step you're on, the error you're seeing, and your browser. We'll sort it.
+Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
@@ -280,19 +172,16 @@ Open an **Issue** on this repo. Include the step you're on, the error you're see
 
 <br/>
 
-```
-  ┌───────────────────────────────────────────────┐
-  │                                               │
-  │   👟  KamSneakers  —  Est. 2025               │
-  │   Where Every Step Is A Statement.™           │
-  │                                               │
-  └───────────────────────────────────────────────┘
-```
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=4000&pause=1000&color=39FF14&background=00000000&center=true&vCenter=true&width=500&lines=Thanks+for+stopping+by+%F0%9F%91%9F;Built+with+%F0%9F%96%A4+by+KamSneakers;Star+the+repo+if+you+fw+it+%E2%AD%90" alt="footer typing" />
 
-![Footer](https://img.shields.io/badge/Built%20Different-KamSneakers%20👟-CC0000?style=for-the-badge&labelColor=0a0a0a)
+<br/><br/>
+
+[![Star](https://img.shields.io/github/stars/kamsneakers/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/kamsneakers/kamsneakers)
+&nbsp;
+[![Follow](https://img.shields.io/github/followers/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/kamsneakers)
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=CC0000,8B0000,0a0a0a&height=8&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,000000,50,003300,100,000000&height=130&section=footer" width="100%"/>
 
 </div>
