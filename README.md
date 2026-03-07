@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0,000000,50,003300,100,000000&height=250&section=header&text=KamSneakers%20👟&fontSize=65&fontColor=39ff14&fontAlignY=45&desc=Premium%20Sneaker%20Store%20•%20Built%20Different&descSize=17&descAlignY=68&descColor=cccccc&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0,003300,50,000000,100,003300&height=220&section=header&text=KamSneakers%20👟&fontSize=62&fontColor=39ff14&fontAlignY=55&desc=Premium%20Sneaker%20Store%20•%20Built%20Different&descSize=16&descAlignY=78&descColor=cccccc&animation=blinking&stroke=39ff14&strokeWidth=1" width="100%"/>
 
 <br/>
 
@@ -55,9 +55,9 @@ The experience is defined by its **black and electric green** identity — dark,
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=Kamythedesigner&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&icon_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=mmesomaonyeka301-code&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&icon_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
 &nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kamythedesigner&layout=compact&hide_border=true&bg_color=000000&title_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=mmesomaonyeka301-code&layout=compact&hide_border=true&bg_color=000000&title_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
 
 </div>
 
@@ -65,7 +65,7 @@ The experience is defined by its **black and electric green** identity — dark,
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com?user=Kamythedesigner&theme=dark&hide_border=true&background=000000&ring=39ff14&fire=39ff14&currStreakLabel=39ff14&sideLabels=ffffff&dates=888888&stroke=003300" width="49%"/>
+<img src="https://github-readme-streak-stats.herokuapp.com?user=mmesomaonyeka301-code&theme=dark&hide_border=true&background=000000&ring=39ff14&fire=39ff14&currStreakLabel=39ff14&sideLabels=ffffff&dates=888888&stroke=003300" width="49%"/>
 
 </div>
 
@@ -117,7 +117,7 @@ The experience is defined by its **black and electric green** identity — dark,
 
 ```bash
 # Clone the repo
-git clone https://github.com/Kamythedesigner/kamsneakers.git
+git clone https://github.com/mmesomaonyeka301-code/kamsneakers.git
 
 # Navigate into it
 cd kamsneakers
@@ -138,7 +138,7 @@ git push origin main
 ```
 Repo → Settings → Pages
 Source: Deploy from branch → main → / (root) → Save
-Live at: https://Kamythedesigner.github.io/kamsneakers
+Live at: https://mmesomaonyeka301-code.github.io/kamsneakers
 ```
 
 ---
@@ -184,12 +184,12 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <br/><br/>
 
-[![Star](https://img.shields.io/github/stars/Kamythedesigner/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/Kamythedesigner/kamsneakers)
+[![Star](https://img.shields.io/github/stars/mmesomaonyeka301-code/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/mmesomaonyeka301-code/kamsneakers)
 &nbsp;
-[![Follow](https://img.shields.io/github/followers/Kamythedesigner?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14&label=Follow%20%40Kamythedesigner)](https://github.com/Kamythedesigner)
+[![Follow](https://img.shields.io/github/followers/mmesomaonyeka301-code?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14&label=Follow)](https://github.com/mmesomaonyeka301-code)
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0,000000,50,003300,100,000000&height=130&section=footer" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=cylinder&color=0,003300,50,000000,100,003300&height=130&section=footer&stroke=39ff14&strokeWidth=1" width="100%"/>
 
 </div>
