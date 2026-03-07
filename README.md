@@ -55,9 +55,17 @@ The experience is defined by its **black and electric green** identity — dark,
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=kamsneakers&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&icon_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api?username=Kamythedesigner&show_icons=true&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&icon_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
 &nbsp;&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=kamsneakers&layout=compact&theme=chartreuse-dark&hide_border=true&bg_color=000000&title_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Kamythedesigner&layout=compact&hide_border=true&bg_color=000000&title_color=39ff14&text_color=ffffff&border_radius=12" height="165"/>
+
+</div>
+
+<br/>
+
+<div align="center">
+
+<img src="https://github-readme-streak-stats.herokuapp.com?user=Kamythedesigner&theme=dark&hide_border=true&background=000000&ring=39ff14&fire=39ff14&currStreakLabel=39ff14&sideLabels=ffffff&dates=888888&stroke=003300" width="49%"/>
 
 </div>
 
@@ -109,7 +117,7 @@ The experience is defined by its **black and electric green** identity — dark,
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/kamsneakers.git
+git clone https://github.com/Kamythedesigner/kamsneakers.git
 
 # Navigate into it
 cd kamsneakers
@@ -130,7 +138,7 @@ git push origin main
 ```
 Repo → Settings → Pages
 Source: Deploy from branch → main → / (root) → Save
-Live at: https://YOUR_USERNAME.github.io/kamsneakers
+Live at: https://Kamythedesigner.github.io/kamsneakers
 ```
 
 ---
@@ -176,9 +184,9 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 <br/><br/>
 
-[![Star](https://img.shields.io/github/stars/kamsneakers/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/kamsneakers/kamsneakers)
+[![Star](https://img.shields.io/github/stars/Kamythedesigner/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/Kamythedesigner/kamsneakers)
 &nbsp;
-[![Follow](https://img.shields.io/github/followers/kamsneakers?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14)](https://github.com/kamsneakers)
+[![Follow](https://img.shields.io/github/followers/Kamythedesigner?color=39ff14&labelColor=000000&style=for-the-badge&logo=github&logoColor=39ff14&label=Follow%20%40Kamythedesigner)](https://github.com/Kamythedesigner)
 
 <br/>
 
